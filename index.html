@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#FFCC02" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Open source voice dictation for macOS and Linux. Talk to your computer and it types. Bring your own transcription backend." />
+    <meta name="keywords" content="voice dictation, speech to text, dictation app, macOS dictation, Linux dictation, Wayland, whisper, transcription, open source" />
+    <link rel="canonical" href="https://yappie.fun" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="yappie - voice dictation for your desktop" />
+    <meta property="og:description" content="Open source voice dictation for macOS and Linux. Talk to your computer and it types. Bring your own transcription backend." />
+    <meta property="og:image" content="https://yappie.fun/og-image.png" />
+    <meta property="og:url" content="https://yappie.fun" />
+    <meta property="og:site_name" content="yappie" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="yappie - voice dictation for your desktop" />
+    <meta name="twitter:description" content="Open source voice dictation for macOS and Linux. Talk to your computer and it types." />
+    <meta name="twitter:image" content="https://yappie.fun/og-image.png" />
+
+    <title>yappie - voice dictation for your desktop</title>
+
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need a GPU for yappie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Use a cloud backend like Groq or OpenAI with just an API key. For local transcription, a GPU helps but CPU-only servers work too."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my audio sent to the cloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if you configure a cloud backend. With a local server, audio never leaves your machine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I share a backend between macOS and Linux?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Both apps use the same OpenAI-compatible API and TCP protocols. Point them at the same server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does yappie work on my Linux distro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If you're running Wayland with PipeWire, yes. Ubuntu, Fedora, Arch, and most modern distros work out of the box. X11 is not currently supported."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Software structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "yappie",
+      "description": "Open source voice dictation for macOS and Linux. Bring your own transcription backend.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "macOS, Linux",
+      "license": "https://opensource.org/licenses/MIT",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "url": "https://yappie.fun"
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
