@@ -3,7 +3,6 @@ import {
   SketchProvider,
   Card,
   Button,
-  Badge,
   Accordion,
   AccordionItem,
 } from "sketchbook-ui";
