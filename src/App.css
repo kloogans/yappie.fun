@@ -198,7 +198,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .plat-card {
@@ -264,10 +264,6 @@ body {
   gap: 1.5rem;
 }
 
-.feat-hero-card {
-  grid-column: 1 / -1;
-}
-
 .feat-card {
   transition: transform 0.25s ease;
 }
@@ -287,47 +283,28 @@ body {
   line-height: 1.55;
 }
 
-.feat-inner code {
-  font-family: 'Courier New', monospace;
-  font-size: 0.8rem;
-  background: rgba(0,0,0,0.07);
-  padding: 0.12em 0.4em;
-  border-radius: 3px;
+.feat-extras {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem auto 0;
+  max-width: 700px;
 }
 
-.feat-hero-inner {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 0.5rem;
-}
-
-.feat-hero-inner h3 {
+.feat-extras li {
   font-family: 'Caveat', cursive;
-  font-size: 2.4rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--faint);
+  color: var(--ink);
+}
+
+.feat-extras li:last-child {
+  border-bottom: none;
+}
+
+.feat-extras strong {
   font-weight: 700;
-  margin-bottom: 0.4rem;
-}
-
-.feat-hero-inner p {
-  font-size: 1.15rem;
-  line-height: 1.55;
-  max-width: 550px;
-}
-
-.feat-hero-inner code {
-  font-family: 'Courier New', monospace;
-  font-size: 0.82rem;
-  background: rgba(0,0,0,0.08);
-  padding: 0.12em 0.4em;
-  border-radius: 3px;
-}
-
-.feat-icon {
-  width: 90px;
-  height: 90px;
-  flex-shrink: 0;
-  animation: float 5s ease-in-out infinite;
 }
 
 /* ─── FAQ ─── */
@@ -355,6 +332,11 @@ body {
   color: var(--muted);
 }
 
+.footer-attribution {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
 .footer a {
   color: var(--ink);
   text-decoration: underline;
@@ -372,14 +354,15 @@ body {
 .platforms-grid .sketch-card,
 .features-layout .sketch-card {
   overflow: visible;
+  height: 100%;
 }
 .platforms-grid .sketch-card__svg,
 .features-layout .sketch-card__svg {
   overflow: hidden;
 }
 
-.sketch-accordion-content-svg {
-  min-height: 0;
+.sketch-accordion-content {
+  min-height: 100px;
 }
 
 /* ─── Responsive ─── */
@@ -400,6 +383,4 @@ body {
   .platforms-grid { grid-template-columns: 1fr; }
 
   .features-layout { grid-template-columns: 1fr; }
-  .feat-hero-card { grid-column: 1; }
-  .feat-hero-inner { flex-direction: column; text-align: center; gap: 1rem; }
 }
