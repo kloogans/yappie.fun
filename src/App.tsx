@@ -115,10 +115,10 @@ export default function App() {
               <div className="plat-inner">
                 <h3>Linux</h3>
                 <p>
-                  Lightweight C daemon with on-device transcription via
-                  whisper.cpp. Keeps your model loaded in GPU memory so
-                  transcription starts the moment you stop talking.
-                  Bind a key in your compositor and go.
+                  Fast, lightweight, and written in C. On-device
+                  transcription via whisper.cpp with your model kept
+                  in memory for near-instant results. Bind a key in
+                  your compositor and go.
                 </p>
                 <span className="plat-req">Wayland + PipeWire</span>
                 <div className="cmd-box">{`# Arch (AUR)\nyay -S yappie\n\n# Any distro\ngit clone https://github.com/kloogans\\\n  /yappie-linux.git\ncd yappie-linux\nbash install.sh`}</div>
@@ -156,19 +156,22 @@ export default function App() {
             </Card>
             <Card variant="notebook" colors={C.amber} className="feat-card">
               <div className="feat-inner">
-                <h3>Open source</h3>
+                <h3>Works everywhere</h3>
                 <p>
-                  MIT licensed. The code is all there if you want to
-                  read it. Your data stays yours.
+                  Transcribed text goes straight to your clipboard and
+                  gets pasted into whatever app you're focused on.
+                  Text editor, browser, terminal, Slack, whatever.
                 </p>
               </div>
             </Card>
             <Card variant="notebook" colors={C.cream} className="feat-card">
               <div className="feat-inner">
-                <h3>Lightweight</h3>
+                <h3>Fast and lightweight</h3>
                 <p>
-                  C daemon on Linux, native menubar app on macOS.
-                  No other BS.
+                  Written in C on Linux and native Swift on macOS.
+                  Your model stays loaded in memory so transcription
+                  starts the moment you stop talking. MIT licensed and
+                  fully open source.
                 </p>
               </div>
             </Card>
