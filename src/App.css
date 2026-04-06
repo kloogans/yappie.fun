@@ -279,8 +279,10 @@ body {
   line-height: 1.65;
   padding: 0.85rem 1.1rem;
   border-radius: 8px;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
   overflow-x: auto;
+  max-width: 100%;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
@@ -392,13 +394,19 @@ body {
   min-height: 100px;
 }
 
+.sketch-accordion-title {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: left;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .hero { min-height: auto; padding: 4rem 1.5rem 3rem; }
   .hero-logo { width: 160px; }
   .hero h1 { font-size: 3.5rem; }
   .tagline { font-size: 1.5rem; }
-  .content { padding: 0 1.25rem; }
+  .content { padding: 0 1.25rem; overflow-x: hidden; }
   .section { padding: 2.5rem 0; }
   .section-head { font-size: 2.5rem; }
 
@@ -410,6 +418,13 @@ body {
   .step-sep { width: 20px; height: 20px; }
 
   .platforms-grid { grid-template-columns: 1fr; }
+  .platforms-grid .sketch-card { overflow: hidden; }
 
   .features-layout { grid-template-columns: 1fr; }
+
+  .sketch-accordion-header-content { padding: 0 16px; }
+  .sketch-accordion-title { font-size: 1.25rem !important; }
+
+  .plat-inner h3 { font-size: 2rem; }
+  .feat-inner h3 { font-size: 1.6rem; }
 }
