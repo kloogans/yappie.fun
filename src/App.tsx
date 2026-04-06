@@ -34,7 +34,7 @@ export default function App() {
             size="lg"
             colors={C.yellow}
             typography={{ ...H, fontSize: "1.5rem" }}
-            onClick={() => window.open("https://github.com/kloogans/yappie", "_blank")}
+            onClick={() => window.open("https://github.com/kloogans/yappie/releases", "_blank")}
           >
             <span className="btn-with-icon">
               <img src="/apple.svg" alt="" className="btn-icon btn-icon-apple" />
@@ -99,7 +99,7 @@ export default function App() {
                   never leaves your Mac. Add cloud APIs as fallbacks or use
                   them as your primary backend.
                 </p>
-                <span className="plat-req">macOS 14+ / Apple Silicon for on-device, Intel for cloud backends</span>
+                <span className="plat-req">macOS 14+ / Apple Silicon</span>
                 <div className="cmd-box">{`brew tap kloogans/yappie\nbrew install --cask yappie`}</div>
                 <p className="plat-note">
                   I don't feel like giving Apple $99 to sign the app, so
@@ -192,27 +192,22 @@ export default function App() {
           <h2 className="section-head anim-up">FAQ</h2>
           <div className="faq-wrap anim-up d1">
             <Accordion>
-              <AccordionItem title="Does it work on Intel Macs?" number={1} colors={C.cream}
-                typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
-                <p>Yes, but on-device transcription requires Apple Silicon (M1 or later).
-                  Intel Macs can use cloud API backends like OpenAI or Groq.</p>
-              </AccordionItem>
-              <AccordionItem title="Is my audio sent to the cloud?" number={2} colors={C.cream}
+              <AccordionItem title="Is my audio sent to the cloud?" number={1} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
                 <p>Only if you configure a cloud backend. With on-device transcription
                   on macOS or whisper.cpp on Linux, audio never leaves your machine.</p>
               </AccordionItem>
-              <AccordionItem title="Which Whisper model should I use?" number={3} colors={C.cream}
+              <AccordionItem title="Which Whisper model should I use?" number={2} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
                 <p>Tiny is the fastest, Large v3 is the most accurate. On macOS,
                   Yappie recommends one based on your RAM. On Linux, pick based
                   on your GPU VRAM. You can hot-swap models without restarting.</p>
               </AccordionItem>
-              <AccordionItem title="Can I share a backend between macOS and Linux?" number={4} colors={C.cream}
+              <AccordionItem title="Can I share a backend between macOS and Linux?" number={3} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
                 <p>Yes. Both apps use the same protocols. Point them at the same server.</p>
               </AccordionItem>
-              <AccordionItem title="Does it work on my Linux distro?" number={5} colors={C.cream}
+              <AccordionItem title="Does it work on my Linux distro?" number={4} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
                 <p>If you're on Wayland with PipeWire, yes. Ubuntu, Fedora,
                   Arch, and most modern distros work out of the box. No X11
