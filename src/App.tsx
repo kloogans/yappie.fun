@@ -63,13 +63,25 @@ export default function App() {
           <h2 className="section-head anim-up">How it works</h2>
           <p className="section-sub anim-up d1">Press a key, speak, and your words appear wherever your cursor is.</p>
           <div className="steps-flow anim-up d2">
-            <span className="step-word">Activate</span>
+            <div className="step">
+              <img src="/step-activate.svg" alt="" className="step-icon" />
+              <span className="step-word">Activate</span>
+            </div>
             <img src="/arrow.svg" alt="" className="step-sep" />
-            <span className="step-word step-yap">Yap</span>
+            <div className="step">
+              <img src="/step-yap.svg" alt="" className="step-icon step-icon-yap" />
+              <span className="step-word step-yap">Yap</span>
+            </div>
             <img src="/arrow.svg" alt="" className="step-sep" />
-            <span className="step-word">Stop</span>
+            <div className="step">
+              <img src="/step-transcribe.svg" alt="" className="step-icon" />
+              <span className="step-word">Transcribe</span>
+            </div>
             <img src="/arrow.svg" alt="" className="step-sep" />
-            <span className="step-word">Done</span>
+            <div className="step">
+              <img src="/step-done.svg" alt="" className="step-icon step-icon-done" />
+              <span className="step-word">Done</span>
+            </div>
           </div>
         </section>
 
@@ -83,21 +95,19 @@ export default function App() {
               <div className="plat-inner">
                 <h3>macOS</h3>
                 <p>
-                  Native menubar app with on-device transcription powered
-                  by WhisperKit and CoreML. Your audio never leaves your Mac.
-                  Add cloud APIs as fallbacks or use them as your primary backend.
-                  Push-to-talk or toggle mode, custom hotkeys, and auto-paste
-                  to your cursor. API keys stay safe in Keychain.
+                  Native menubar app with on-device transcription. Your audio
+                  never leaves your Mac. Add cloud APIs as fallbacks or use
+                  them as your primary backend.
                 </p>
                 <span className="plat-req">macOS 14+ / Apple Silicon for on-device, Intel for cloud backends</span>
                 <div className="cmd-box">{`brew tap kloogans/yappie\nbrew install --cask yappie`}</div>
                 <p className="plat-note">
-                  Since I don't feel like giving Apple $99 to sign the app, you'll need to
-                  run{" "}
-                  <code>xattr -dr com.apple.quarantine /Applications/Yappie.app</code>{" "}
-                  after installing to clear the Gatekeeper flag. You may also need to
-                  grant Microphone and Accessibility permissions in System Settings &gt;
-                  Privacy &amp; Security if the prompts don't appear on their own.
+                  I don't feel like giving Apple $99 to sign the app, so
+                  macOS will block it on first launch. Head to System
+                  Settings &gt; Privacy &amp; Security, scroll down, and
+                  click "Open Anyway." You'll also want to grant Microphone and
+                  Accessibility permissions there if the prompts don't
+                  show up on their own.
                 </p>
               </div>
             </Card>

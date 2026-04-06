@@ -151,7 +151,8 @@ body {
 }
 
 .section-sub {
-  font-size: 1.05rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1.45rem;
   color: var(--muted);
   text-align: center;
   margin-top: -1rem;
@@ -163,24 +164,50 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.step:hover .step-icon {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.step-icon-yap,
+.step-icon-done {
+  width: 56px;
+  height: 56px;
 }
 
 .step-word {
   font-family: 'Caveat', cursive;
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   font-weight: 700;
   color: var(--ink);
   transition: color 0.2s;
 }
 
-.step-word:hover {
+.step:hover .step-word {
   color: var(--amber);
 }
 
 .step-yap {
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   color: var(--amber);
 }
 
@@ -375,10 +402,12 @@ body {
   .section { padding: 2.5rem 0; }
   .section-head { font-size: 2.5rem; }
 
-  .steps-flow { gap: 0.6rem; }
-  .step-word { font-size: 2rem; }
-  .step-yap { font-size: 2.4rem; }
-  .step-sep { width: 24px; height: 24px; }
+  .steps-flow { gap: 0.8rem; }
+  .step-icon { width: 36px; height: 36px; }
+  .step-icon-yap, .step-icon-done { width: 44px; height: 44px; }
+  .step-word { font-size: 1.7rem; }
+  .step-yap { font-size: 2rem; }
+  .step-sep { width: 20px; height: 20px; }
 
   .platforms-grid { grid-template-columns: 1fr; }
 
