@@ -115,9 +115,10 @@ export default function App() {
               <div className="plat-inner">
                 <h3>Linux</h3>
                 <p>
-                  One bash script. Bind it to any key in your compositor,
-                  set up backends in a TOML file, and you're good. Works on
-                  any distro running Wayland.
+                  Lightweight C daemon with on-device transcription via
+                  whisper.cpp. Keeps your model loaded in GPU memory so
+                  transcription starts the moment you stop talking.
+                  Bind a key in your compositor and go.
                 </p>
                 <span className="plat-req">Wayland + PipeWire</span>
                 <div className="cmd-box">{`# Arch (AUR)\nyay -S yappie\n\n# Any distro\ngit clone https://github.com/kloogans\\\n  /yappie-linux.git\ncd yappie-linux\nbash install.sh`}</div>
@@ -136,10 +137,10 @@ export default function App() {
               <div className="feat-inner">
                 <h3>On-device transcription</h3>
                 <p>
-                  Runs Whisper models directly on your Mac using Apple
-                  Silicon's Neural Engine. No API keys, no internet, no
-                  data leaving your machine. Pick from Tiny (~40 MB) to
-                  Large v3 (~1.5 GB) based on your needs.
+                  Runs Whisper models right on your hardware. Apple
+                  Silicon's Neural Engine on macOS, whisper.cpp with GPU
+                  acceleration on Linux. No API keys, no internet, no
+                  data leaving your machine.
                 </p>
               </div>
             </Card>
@@ -167,18 +168,18 @@ export default function App() {
               <div className="feat-inner">
                 <h3>Lightweight</h3>
                 <p>
-                  A bash script on Linux, a native menubar app on macOS.
-                  No Electron. No runtimes. No bloat.
+                  A native C daemon on Linux, a native menubar app on
+                  macOS. No Electron. No runtimes. No bloat.
                 </p>
               </div>
             </Card>
           </div>
           <ul className="feat-extras anim-up d2">
-            <li><strong>Bring your own backend.</strong> OpenAI, Groq, or any OpenAI-compatible speech-to-text endpoint. Self-hosted servers work too.</li>
-            <li><strong>Auto-paste.</strong> Transcribed text goes straight to your cursor. No Cmd+V needed.</li>
-            <li><strong>Custom hotkeys.</strong> Use the default Fn key or set any key combination you want.</li>
-            <li><strong>Push-to-talk or toggle.</strong> Hold a key to record, or click to start and stop.</li>
-            <li><strong>Drag-and-drop ordering.</strong> Reorder your backends by dragging cards in Preferences.</li>
+            <li><strong>Bring your own backend.</strong> OpenAI, Groq, or any OpenAI-compatible speech-to-text endpoint. Self-hosted servers and custom TCP backends work too.</li>
+            <li><strong>Auto-paste.</strong> Transcribed text goes straight to wherever your cursor is. No manual paste needed.</li>
+            <li><strong>Custom hotkeys.</strong> Fn key on macOS, any compositor binding on Linux. Your call.</li>
+            <li><strong>Push-to-talk or toggle.</strong> Hold a key to record, or press to start and stop.</li>
+            <li><strong>Hot-swap models.</strong> Switch Whisper models on the fly without restarting anything.</li>
           </ul>
         </section>
 
@@ -197,14 +198,13 @@ export default function App() {
               <AccordionItem title="Is my audio sent to the cloud?" number={2} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
                 <p>Only if you configure a cloud backend. With on-device transcription
-                  on macOS or a local server on Linux, audio never leaves your machine.</p>
+                  on macOS or whisper.cpp on Linux, audio never leaves your machine.</p>
               </AccordionItem>
               <AccordionItem title="Which Whisper model should I use?" number={3} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
-                <p>Yappie recommends one based on your Mac's RAM. Tiny is the fastest,
-                  Large v3 is the most accurate. The first launch after downloading a
-                  model takes longer while CoreML compiles it for your hardware.
-                  After that, it loads in under a second.</p>
+                <p>Tiny is the fastest, Large v3 is the most accurate. On macOS,
+                  Yappie recommends one based on your RAM. On Linux, pick based
+                  on your GPU VRAM. You can hot-swap models without restarting.</p>
               </AccordionItem>
               <AccordionItem title="Can I share a backend between macOS and Linux?" number={4} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
