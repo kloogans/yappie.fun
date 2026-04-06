@@ -109,6 +109,7 @@ body {
   line-height: 1.35;
   margin-bottom: 2.5rem;
   max-width: 460px;
+  text-wrap: balance;
 }
 
 .hero-cta {
@@ -410,15 +411,21 @@ body {
   .section { padding: 2.5rem 0; }
   .section-head { font-size: 2.5rem; }
 
-  .steps-flow { gap: 0.8rem; }
+  .steps-flow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    justify-items: center;
+  }
   .step-icon { width: 36px; height: 36px; }
   .step-icon-yap, .step-icon-done { width: 44px; height: 44px; }
   .step-word { font-size: 1.7rem; }
   .step-yap { font-size: 2rem; }
-  .step-sep { width: 20px; height: 20px; }
+  .step-sep { display: none; }
 
   .platforms-grid { grid-template-columns: 1fr; }
-  .platforms-grid .sketch-card { overflow: hidden; }
+  .plat-inner, .plat-inner p, .plat-inner .plat-note { overflow-wrap: break-word; word-break: break-word; }
+  .cmd-box { max-width: calc(100vw - 6rem); }
 
   .features-layout { grid-template-columns: 1fr; }
 
