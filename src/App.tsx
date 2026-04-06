@@ -27,7 +27,7 @@ export default function App() {
         <img src="/yappie-hero.png" alt="Yappie" className="hero-logo anim-up" />
         <h1 className="anim-up d1" style={H}>yappie</h1>
         <p className="tagline anim-up d2">
-          Talk to your computer. It types.
+          Fast, private dictation for macOS and Linux.
         </p>
         <div className="hero-cta anim-up d3">
           <Button
@@ -61,7 +61,7 @@ export default function App() {
         {/* How it works */}
         <section className="section">
           <h2 className="section-head anim-up">How it works</h2>
-          <p className="section-sub anim-up d1">Same on both platforms</p>
+          <p className="section-sub anim-up d1">Press a key, speak, and your words appear wherever your cursor is.</p>
           <div className="steps-flow anim-up d2">
             <span className="step-word">Activate</span>
             <img src="/arrow.svg" alt="" className="step-sep" />
@@ -83,11 +83,13 @@ export default function App() {
               <div className="plat-inner">
                 <h3>macOS</h3>
                 <p>
-                  Lives in your menubar. Push-to-talk or toggle, your call.
-                  Pick your backends in a native preferences window and
-                  API keys stay safe in Keychain.
+                  Native menubar app with on-device transcription powered
+                  by WhisperKit and CoreML. Your audio never leaves your Mac.
+                  Add cloud APIs as fallbacks or use them as your primary backend.
+                  Push-to-talk or toggle mode, custom hotkeys, and auto-paste
+                  to your cursor. API keys stay safe in Keychain.
                 </p>
-                <span className="plat-req">macOS 14+</span>
+                <span className="plat-req">macOS 14+ / Apple Silicon for on-device, Intel for cloud backends</span>
                 <div className="cmd-box">{`brew tap kloogans/yappie\nbrew install --cask yappie`}</div>
                 <p className="plat-note">
                   Since I don't feel like giving Apple $99 to sign the app, you'll need to
@@ -122,20 +124,23 @@ export default function App() {
           <div className="features-layout anim-up d1">
             <Card variant="notebook" colors={C.warm} className="feat-card">
               <div className="feat-inner">
-                <h3>Private by default</h3>
+                <h3>On-device transcription</h3>
                 <p>
-                  Run a local transcription server and your audio never
-                  leaves your machine. Cloud is there if you want it,
-                  but never required.
+                  Runs Whisper models directly on your Mac using Apple
+                  Silicon's Neural Engine. No API keys, no internet, no
+                  data leaving your machine. Pick from Tiny (~40 MB) to
+                  Large v3 (~1.5 GB) based on your needs.
                 </p>
               </div>
             </Card>
             <Card variant="notebook" colors={C.cream} className="feat-card">
               <div className="feat-inner">
-                <h3>Lightweight</h3>
+                <h3>Automatic fallback chain</h3>
                 <p>
-                  A bash script on Linux, a native menubar app on macOS.
-                  No Electron. No runtimes. No bloat.
+                  Set up multiple backends and Yappie tries them in order.
+                  If the primary fails, the next one picks up. Only your
+                  primary model loads at startup, so fallbacks don't slow
+                  anything down.
                 </p>
               </div>
             </Card>
@@ -150,18 +155,20 @@ export default function App() {
             </Card>
             <Card variant="notebook" colors={C.cream} className="feat-card">
               <div className="feat-inner">
-                <h3>Works everywhere</h3>
+                <h3>Lightweight</h3>
                 <p>
-                  macOS and any Linux distro running Wayland. Ubuntu, Fedora,
-                  Arch, whatever. Same setup, same workflow.
+                  A bash script on Linux, a native menubar app on macOS.
+                  No Electron. No runtimes. No bloat.
                 </p>
               </div>
             </Card>
           </div>
           <ul className="feat-extras anim-up d2">
-            <li><strong>Bring your own backend.</strong> Any OpenAI-compatible speech-to-text API, cloud or self-hosted.</li>
-            <li><strong>Instant.</strong> Text shows up at your cursor the moment you stop talking.</li>
-            <li><strong>Configurable.</strong> Push-to-talk or toggle mode. Multiple backends with priority ordering.</li>
+            <li><strong>Bring your own backend.</strong> OpenAI, Groq, or any OpenAI-compatible speech-to-text endpoint. Self-hosted servers work too.</li>
+            <li><strong>Auto-paste.</strong> Transcribed text goes straight to your cursor. No Cmd+V needed.</li>
+            <li><strong>Custom hotkeys.</strong> Use the default Fn key or set any key combination you want.</li>
+            <li><strong>Push-to-talk or toggle.</strong> Hold a key to record, or click to start and stop.</li>
+            <li><strong>Drag-and-drop ordering.</strong> Reorder your backends by dragging cards in Preferences.</li>
           </ul>
         </section>
 
@@ -172,21 +179,28 @@ export default function App() {
           <h2 className="section-head anim-up">FAQ</h2>
           <div className="faq-wrap anim-up d1">
             <Accordion>
-              <AccordionItem title="Do I need a GPU?" number={1} colors={C.cream}
+              <AccordionItem title="Does it work on Intel Macs?" number={1} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
-                <p>Nope. Use a cloud backend like Groq or OpenAI with just an API key.
-                  For local, a GPU helps but CPU-only servers work too.</p>
+                <p>Yes, but on-device transcription requires Apple Silicon (M1 or later).
+                  Intel Macs can use cloud API backends like OpenAI or Groq.</p>
               </AccordionItem>
               <AccordionItem title="Is my audio sent to the cloud?" number={2} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
-                <p>Only if you configure a cloud backend. With a local server, audio
-                  never leaves your machine.</p>
+                <p>Only if you configure a cloud backend. With on-device transcription
+                  on macOS or a local server on Linux, audio never leaves your machine.</p>
               </AccordionItem>
-              <AccordionItem title="Can I share a backend between macOS and Linux?" number={3} colors={C.cream}
+              <AccordionItem title="Which Whisper model should I use?" number={3} colors={C.cream}
+                typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
+                <p>Yappie recommends one based on your Mac's RAM. Tiny is the fastest,
+                  Large v3 is the most accurate. The first launch after downloading a
+                  model takes longer while CoreML compiles it for your hardware.
+                  After that, it loads in under a second.</p>
+              </AccordionItem>
+              <AccordionItem title="Can I share a backend between macOS and Linux?" number={4} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
                 <p>Yes. Both apps use the same protocols. Point them at the same server.</p>
               </AccordionItem>
-              <AccordionItem title="Does it work on my Linux distro?" number={4} colors={C.cream}
+              <AccordionItem title="Does it work on my Linux distro?" number={5} colors={C.cream}
                 typography={{ ...H, titleSize: "1.5rem", contentSize: "1.1rem" }}>
                 <p>If you're on Wayland with PipeWire, yes. Ubuntu, Fedora,
                   Arch, and most modern distros work out of the box. No X11
