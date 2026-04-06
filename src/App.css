@@ -340,7 +340,10 @@ body {
 /* ─── FAQ ─── */
 .faq-wrap {
   max-width: 800px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* ─── Footer ─── */
