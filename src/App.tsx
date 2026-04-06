@@ -175,11 +175,11 @@ export default function App() {
             </Card>
           </div>
           <ul className="feat-extras anim-up d2">
-            <li><strong>Bring your own backend.</strong> OpenAI, Groq, or any OpenAI-compatible speech-to-text endpoint. Self-hosted servers and custom TCP backends work too.</li>
-            <li><strong>Auto-paste.</strong> Transcribed text goes straight to wherever your cursor is. No manual paste needed.</li>
-            <li><strong>Custom hotkeys.</strong> Fn key on macOS, any compositor binding on Linux. Your call.</li>
-            <li><strong>Push-to-talk or toggle.</strong> Hold a key to record, or press to start and stop.</li>
+            <li><strong>Bring your own backend.</strong> OpenAI, Groq, any OpenAI-compatible endpoint, or a custom TCP server. Self-host if you want.</li>
+            <li><strong>Auto-paste.</strong> Transcribed text goes straight to wherever your cursor is.</li>
             <li><strong>Hot-swap models.</strong> Switch Whisper models on the fly without restarting anything.</li>
+            <li><strong>Bind it your way.</strong> Custom hotkeys in the app on macOS, any compositor keybinding on Linux.</li>
+            <li><strong>Push-to-talk or toggle.</strong> Hold to record or press to start and stop on macOS. Linux uses toggle mode.</li>
           </ul>
         </section>
 
