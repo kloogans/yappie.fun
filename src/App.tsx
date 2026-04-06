@@ -137,10 +137,10 @@ export default function App() {
               <div className="feat-inner">
                 <h3>On-device transcription</h3>
                 <p>
-                  Runs Whisper models right on your hardware. Apple
-                  Silicon's Neural Engine on macOS, whisper.cpp with GPU
-                  acceleration on Linux. No API keys, no internet, no
-                  data leaving your machine.
+                  Your audio never leaves your machine. Whisper runs
+                  locally through Apple's Neural Engine on macOS or
+                  whisper.cpp on Linux. GPU speeds things up, but CPU
+                  works fine too.
                 </p>
               </div>
             </Card>
@@ -148,10 +148,9 @@ export default function App() {
               <div className="feat-inner">
                 <h3>Automatic fallback chain</h3>
                 <p>
-                  Set up multiple backends and Yappie tries them in order.
-                  If the primary fails, the next one picks up. Only your
-                  primary model loads at startup, so fallbacks don't slow
-                  anything down.
+                  Stack your backends in any order. If the first one
+                  fails, Yappie moves to the next. Local whisper first
+                  with a cloud API as backup, or the other way around.
                 </p>
               </div>
             </Card>
@@ -159,8 +158,8 @@ export default function App() {
               <div className="feat-inner">
                 <h3>Open source</h3>
                 <p>
-                  MIT licensed. No telemetry, no accounts, no tracking.
-                  Read every line of code before you run it.
+                  MIT licensed. No telemetry, no accounts, nothing
+                  phoning home. Read every line before you run it.
                 </p>
               </div>
             </Card>
@@ -168,14 +167,14 @@ export default function App() {
               <div className="feat-inner">
                 <h3>Lightweight</h3>
                 <p>
-                  A native C daemon on Linux, a native menubar app on
-                  macOS. No Electron. No runtimes. No bloat.
+                  C daemon on Linux, native menubar app on macOS.
+                  No other BS.
                 </p>
               </div>
             </Card>
           </div>
           <ul className="feat-extras anim-up d2">
-            <li><strong>Bring your own backend.</strong> OpenAI, Groq, any OpenAI-compatible endpoint, or a custom TCP server. Self-host if you want.</li>
+            <li><strong>Bring your own backend.</strong> OpenAI, Groq, any compatible endpoint, or a custom TCP server.</li>
             <li><strong>Auto-paste.</strong> Transcribed text goes straight to wherever your cursor is.</li>
             <li><strong>Hot-swap models.</strong> Switch Whisper models on the fly without restarting anything.</li>
             <li><strong>Bind it your way.</strong> Custom hotkeys in the app on macOS, any compositor keybinding on Linux.</li>
