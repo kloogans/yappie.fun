@@ -158,8 +158,8 @@ export default function App() {
               <div className="feat-inner">
                 <h3>Open source</h3>
                 <p>
-                  MIT licensed. No telemetry, no accounts, nothing
-                  phoning home. Read every line before you run it.
+                  MIT licensed. The code is all there if you want to
+                  read it. Your data stays yours.
                 </p>
               </div>
             </Card>
