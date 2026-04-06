@@ -432,6 +432,19 @@ body {
   .sketch-accordion-header-content { padding: 0 16px; }
   .sketch-accordion-title { font-size: 1.25rem !important; }
 
+  .plat-card,
+  .feat-card {
+    transition: none;
+  }
+  .plat-card:hover,
+  .plat-card:focus,
+  .plat-card:active,
+  .feat-card:hover,
+  .feat-card:focus,
+  .feat-card:active {
+    transform: none;
+  }
+
   .plat-inner h3 { font-size: 2rem; }
   .feat-inner h3 { font-size: 1.6rem; }
 }
