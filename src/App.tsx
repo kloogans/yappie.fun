@@ -107,7 +107,9 @@ export default function App() {
                   Settings &gt; Privacy &amp; Security, scroll down, and
                   click "Open Anyway." You'll also want to grant Microphone and
                   Accessibility permissions there if the prompts don't
-                  show up on their own.
+                  show up on their own. If you like the app, consider donating
+                  to my <a href="https://ko-fi.com/kloogans" target="_blank" rel="noopener noreferrer">"give
+                  Apple $99 to sign the app" fund</a>.
                 </p>
               </div>
             </Card>

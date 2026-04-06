@@ -263,6 +263,19 @@ body {
   color: var(--muted);
 }
 
+.plat-note a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.plat-note a:hover {
+  color: var(--ink);
+}
+
 .plat-note code {
   font-family: 'Courier New', monospace;
   font-size: 0.78rem;
