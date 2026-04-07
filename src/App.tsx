@@ -69,7 +69,7 @@ export default function App() {
             </div>
             <img src="/arrow.svg" alt="" className="step-sep" />
             <div className="step">
-              <img src="/step-yap.svg?v=2" alt="" className="step-icon step-icon-yap" />
+              <img src="/step-yap-v2.svg" alt="" className="step-icon step-icon-yap" />
               <span className="step-word step-yap">Yap</span>
             </div>
             <img src="/arrow.svg" alt="" className="step-sep" />
